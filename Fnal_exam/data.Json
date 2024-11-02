@@ -1,0 +1,22 @@
+[
+    [
+        {
+            "city_name": "tbilisy",
+            "shop": "s1",
+            "costume1": {
+                "costume_name": "zombie",
+                "costume_stock": 1,
+                "costume_price": 30
+            }
+        },
+        {
+            "city_name": "tbilisy",
+            "shop": "s2",
+            "costume1": {
+                "costume_name": "hulk",
+                "costume_stock": 30,
+                "costume_price": 100
+            }
+        }
+    ]
+]
