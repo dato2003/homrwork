@@ -1,9 +1,12 @@
 import random
+from tkinter.font import names
+
 from File import Json
 
 class City:
     def __init__(self,name,population):
-        self.name = name
+        self.name =name
+        self.population=population
         self.population_dict = {}
         self.costume_shops = []
         self.data=Json()
@@ -51,10 +54,12 @@ class City:
                     costume_price = (100)
                 (x[f"costume{y+1}"]["costume_price"])=costume_price
         self.data.save_info(self.costume_shops)
+        self.data.population_save_info(self.population_dict)
         print("Demand for scostumes in percentages", self.population_dict)
 
 
     def city_report(self):
+        print("city_report")
         for info in self.costume_shops:
             for kay,value in info.items():
                 print(kay,value)

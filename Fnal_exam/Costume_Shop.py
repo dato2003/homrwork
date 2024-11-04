@@ -52,6 +52,8 @@ class CostumeShop(City):
                             print("The new price of the costume",x[f"costume{y+1}"])
 
     def adjust_deman(self,costume_name,population):
+        self.costume_shops= self.data.read_info()
+        self.population_dict = self.data.population_read_info()
         if costume_name in self.population_dict:
             self.population_dict.pop(costume_name)
             my_list = []
@@ -79,7 +81,7 @@ class CostumeShop(City):
                 differences = [numbers[0]] + [numbers[i] - numbers[i - 1] for i in range(1, diff_costum-1)] + [
                 total - numbers[-1]]
             except:
-                differences=[70]
+                differences=[total]
 
 
 
@@ -87,7 +89,7 @@ class CostumeShop(City):
                 self.population_dict[costume_list[x]] = (f"{differences[x]}%")
 
             self.population_dict[costume_name]=(f"{population}%")
-            print("new Demand for scostumes",self.population_dict)
+            print("new Demand for costumes",self.population_dict)
 
 
 
@@ -105,7 +107,7 @@ class CostumeShop(City):
                             costume["costume_stock"]=new_costume_stock
                             x[f"costume{costume_number + 1}"]=costume
                             self.data.save_info(self.costume_shops)
-                            print("Number of suits left in stock",costume)
+                            print("Number of suits left in stock",costume["costume_name"],"costume stock" ,costume["costume_stock"])
                         else :
                             print("There is not enough stock in the shop ")
 
