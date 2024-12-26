@@ -1,0 +1,14 @@
+<!-- templates/santa_list/view_santas_list.html -->
+<h1>Santa's List</h1>
+<h2>Nice List:</h2>
+<ul>
+    {% for kid in nice_kids %}
+    <li>{{ kid }}  :  niceness coefficient - {{ kid.niceness_coefficient }}</li>
+    {% endfor %}
+</ul>
+<h2>Naughty List:</h2>
+<ul>
+    {% for kid in naughty_kids %}
+    <li>{{ kid }}  :  niceness coefficient  - {{ kid.niceness_coefficient }}</li>
+    {% endfor %}
+</ul>

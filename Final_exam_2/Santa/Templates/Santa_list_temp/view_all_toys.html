@@ -1,0 +1,28 @@
+<!-- toy_factory/templates/toy_factory/view_all_toys.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Toys</title>
+</head>
+<body>
+    <h1>All Toys</h1>
+    <ul>
+        {% for toy in toys %}
+            <li>
+
+                <p><a href="{% url 'view_toy' toy.id %}">{{toy.kid.name}}:  {{toy.toy_type}}</a></p>
+            </li>
+        {% empty %}
+            <li>No toys available.</li>
+        {% endfor %}
+
+        {% for item in coal %}
+        <li>
+            <strong>{{item.kid.name}} :</strong>{{item.punishment}}
+            {%endfor%}
+        </li>
+    </ul>
+</body>
+</html>

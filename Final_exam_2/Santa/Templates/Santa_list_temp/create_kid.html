@@ -1,0 +1,7 @@
+<!-- templates/santa_list/create_kid.html -->
+<h1>Create a new Kid</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Create Kid</button>
+</form>

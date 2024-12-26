@@ -1,0 +1,23 @@
+<!-- templates/Statistics/toy_statistics.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Statistics</title>
+</head>
+<body>
+    <h1>Toy Statistics</h1>
+
+    <h2>Toy Demand</h2>
+    <ul>
+        {% for toy, count in toy_count.items %}
+            <li>{{ toy }}: {{ count }} kids want this toy.</li>
+        {% empty %}
+            <li>No toys requested yet.</li>
+        {% endfor %}
+    </ul>
+
+
+</body>
+</html>

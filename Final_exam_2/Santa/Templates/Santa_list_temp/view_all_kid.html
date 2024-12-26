@@ -1,0 +1,11 @@
+
+
+
+
+<h3>KIDS</h3>
+<ul>
+    {% for kid in kids %}
+        <li>{{ kid.name }} - Wants: {{ kid.gift }}</li>
+    <p> kid id : {{kid.id}}</p>
+    {% endfor %}
+</ul>
